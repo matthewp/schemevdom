@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<title>schemevdom</title>
+
+<link rel="preload" as="fetch" href="./vdom.wasm" crossorigin="use-credentials">
+<script src="./codemirror.js"></script>
+<link rel="stylesheet" href="./codemirror.css">
+<script src="./scheme/scheme.js"></script>
+<script type="module" src="./app.js"></script>
+<style>
+  .CodeMirror {
+    border: 1px solid #ddd;
+    height: auto;
+  }
+
+  #live-preview {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 10px;
+  }
+
+  #diff-result {
+    padding: 1rem 2rem;
+    border: 2px dashed #cd6a51;
+  }
+
+  button.run {
+    margin-top: 8px;
+    border-color: #ddd;
+    font-size: 110%;
+    font-family: Georgia;
+    padding: 5px 15px;
+  }
+  button.run:not([disabled]) {
+    cursor: pointer;
+  }
+</style>
+
+<main>
+  <section id="live-preview">
+    <div id="editor"></div>
+    <div id="diff-result"><div id="main">Hello world</div></div>
+  </section>
+
+  <button type="button" class="run" disabled>Run</button>
+</main>
