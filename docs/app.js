@@ -3,7 +3,7 @@ import { load } from './diff.js';
 const editor = document.querySelector('#editor');
 
 var actualCode = `
-'(div (id "main")
+'(div ()
   "Hello world")
 `.trim();
 
@@ -19,8 +19,9 @@ async function begin() {
   const runDemo = differ.exports['run-demo'];
 
   btn.onclick = function(){
+    let d = differ;
     let out = runDemo();
-    console.log("CLICKED");
+    console.log("Result", out);
   };
   btn.removeAttribute("disabled");
 }
