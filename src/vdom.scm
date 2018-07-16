@@ -3,8 +3,12 @@
  (import rnrs)
 
  (define (diff old new)
-  (let ((changes '(4 87)))
-   new))
+  (let ((bv (make-bytevector 10))
+        (changes '(4 87)))
+   (begin
+    (display bv)
+    (newline)
+    new)))
  
  (define (run-demo)
   (let ((old '(div () "Hello world"))
